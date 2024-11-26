@@ -1,0 +1,108 @@
+Dataset: civilcomments
+Algorithm: ERM
+Root dir: ../../../data/datasets/
+Split scheme: official
+Dataset kwargs: {}
+Download: False
+Frac: 1.0
+Version: None
+Dfr reweighting drop: True
+Dfr reweighting seed: 2
+Dfr reweighting frac: 0.2
+Civilcomments remove minority: False
+Unlabeled split: None
+Unlabeled version: None
+Use unlabeled y: False
+Loader kwargs: {'num_workers': 0, 'pin_memory': True}
+Unlabeled loader kwargs: {'num_workers': 0, 'pin_memory': True}
+Train loader: standard
+Uniform over groups: False
+Distinct groups: None
+N groups per batch: 1
+Unlabeled n groups per batch: 1
+Batch size: 16
+Unlabeled batch size: 16
+Eval loader: standard
+Gradient accumulation steps: 1
+Model: bert-base-uncased
+Model kwargs: {}
+Noisystudent add dropout: None
+Noisystudent dropout rate: None
+Pretrained model path: None
+Load featurizer only: False
+Teacher model path: None
+Transform: bert
+Additional train transform: None
+Target resolution: None
+Resize scale: None
+Max token length: 300
+Randaugment n: 2
+Loss function: cross_entropy
+Loss kwargs: {}
+Groupby fields: ['black', 'y']
+Group dro step size: None
+Coral penalty weight: 10.0
+Dann penalty weight: 1.0
+Dann classifier lr: 1e-05
+Dann featurizer lr: 1e-06
+Dann discriminator lr: 1e-05
+Afn penalty weight: None
+Safn delta r: None
+Hafn r: None
+Use hafn: False
+Irm lambda: 1.0
+Irm penalty anneal iters: None
+Self training lambda: None
+Self training threshold: None
+Pseudolabel t2: None
+Soft pseudolabels: False
+Algo log metric: accuracy
+Process pseudolabels function: pseudolabel_multiclass_logits
+Val metric: acc_wg
+Val metric decreasing: False
+N epochs: 5
+Optimizer: AdamW
+Lr: 1e-05
+Weight decay: 0.01
+Max grad norm: 1.0
+Optimizer kwargs: {}
+Scheduler: linear_schedule_with_warmup
+Scheduler kwargs: {'num_warmup_steps': 0}
+Scheduler metric split: val
+Scheduler metric name: None
+Process outputs function: multiclass_logits_to_pred
+Evaluate all splits: True
+Eval splits: []
+Eval only: False
+Eval epoch: None
+Device: cuda
+Seed: 2
+Log dir: 'logs/bert_civilcomments_dfrdrop_2/'
+Log every: 50
+Save step: None
+Save best: True
+Save last: True
+Save pred: True
+No group logging: False
+Progress bar: False
+Resume: False
+Use wandb: False
+Wandb api key path: None
+Wandb kwargs: {}
+Use data parallel: False
+
+Train data...
+    y = 0, black = 0: n = 185243
+    y = 0, black = 1: n = 5501
+    y = 1, black = 0: n = 21962
+    y = 1, black = 1: n = 2524
+Validation data...
+    y = 0, black = 0: n = 39006
+    y = 0, black = 1: n = 1119
+    y = 1, black = 0: n = 4522
+    y = 1, black = 1: n = 533
+Test data...
+    y = 0, black = 0: n = 115223
+    y = 0, black = 1: n = 3335
+    y = 1, black = 0: n = 13687
+    y = 1, black = 1: n = 1537
