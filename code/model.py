@@ -473,7 +473,7 @@ def model_parameters_freeze(model):
     for name, param in model.named_parameters():
         param.requires_grad = False
     for param in model.classifier.parameters():
-        nn.init.normal_(param, mean=0, std=1)
+        # nn.init.normal_(param, mean=0, std=1)
         param.requires_grad = True
 
     print("\nAfter fixing the layers before the last linear layer:")
