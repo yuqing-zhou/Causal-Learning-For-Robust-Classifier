@@ -1,6 +1,6 @@
 # Fighting Spurious Correlations in Text Classification via a Causal Learning Perspective
 
-This is the repository for the paper "Fighting Spurious Correlations in Text Classification via a Causal Learning Perspective." 
+This is the repository for the paper "[Fighting Spurious Correlations in Text Classification via a Causal Learning Perspective.](https://arxiv.org/pdf/2411.01045)" 
 
 ### File Structure
 To successfully run the program, the project file should follow the followiing structure:
